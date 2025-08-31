@@ -56,12 +56,13 @@
       <div class="ft-main-content">
         <!-- Logo and Description -->
         <div class="ft-brand-column">
-          <div class="ft-logo">
-            <div class="ft-logo-icon">
-              <!-- Siand logo placeholder -->
-               <img src="/images/logo.jpg" alt="Logo" class="h-10 w-auto">
-            </div>
-          </div>
+         <div class="ft-logo">
+  <div class="ft-logo-icon">
+    <!-- Siand logo placeholder -->
+    <img src="/images/logo.jpg" alt="Logo" style="height: 3.6rem; width: auto;">
+  </div>
+</div>
+
           
           <p class="ft-brand-description">
             Sed perspiciatis unde omnis istee sit voluptatem accusante doloreue 
@@ -98,6 +99,26 @@
               </svg>
             </a>
           </div>
+         <div class="ft-usa-content">
+    <!-- American Flag SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="ft-flag-icon">
+      <rect width="640" height="480" fill="#fff"/>
+      <g fill="#bf0a30">
+        <rect width="640" height="36.923"/>
+        <rect y="73.846" width="640" height="36.923"/>
+        <rect y="147.692" width="640" height="36.923"/>
+        <rect y="221.538" width="640" height="36.923"/>
+        <rect y="295.385" width="640" height="36.923"/>
+        <rect y="369.231" width="640" height="36.923"/>
+        <rect y="443.077" width="640" height="36.923"/>
+      </g>
+      <rect width="246.154" height="295.385" fill="#002868"/>
+    </svg>
+    <span class="ft-usa-text" style="font-size:0.9rem; margin-top:5px; display:inline-block;">
+        Proudly Designed and Assembled in the USA
+    </span>
+</div>
+
         </div>
 
         <!-- Column 1: About -->
@@ -137,41 +158,28 @@
         </div>
       </div>
 
-      <!-- Bottom Section with USA Flag and Copyright -->
-      <div class="ft-bottom-section">
-        <!-- Back to Top Arrow -->
-        <button class="ft-back-to-top" @click="scrollToTop">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-          </svg>
-        </button>
+     <!-- Bottom Section with USA Flag and Copyright -->
+<div class="ft-bottom-section">
+  <!-- Back to Top Arrow -->
+  <button class="ft-back-to-top" @click="scrollToTop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
 
-        <!-- USA Flag and Copyright - CENTERED -->
-        <div class="ft-bottom-content">
-          <div class="ft-usa-content">
-            <!-- American Flag SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="ft-flag-icon">
-              <rect width="640" height="480" fill="#fff"/>
-              <g fill="#bf0a30">
-                <rect width="640" height="36.923"/>
-                <rect y="73.846" width="640" height="36.923"/>
-                <rect y="147.692" width="640" height="36.923"/>
-                <rect y="221.538" width="640" height="36.923"/>
-                <rect y="295.385" width="640" height="36.923"/>
-                <rect y="369.231" width="640" height="36.923"/>
-                <rect y="443.077" width="640" height="36.923"/>
-              </g>
-              <rect width="246.154" height="295.385" fill="#002868"/>
-            </svg>
-            <span class="ft-usa-text">Proudly Designed and Assembled in the USA</span>
-          </div>
+  <!-- USA Flag and Copyright - CENTERED -->
+  <div class="ft-bottom-content">
+    <!-- Copyright -->
+    <div class="ft-copyright">
+      © 2025 <a href="#" class="ft-brand-link">Admin</a>. All rights reserved.
+      <span class="ft-footer-links">
+        | <a href="/terms" class="ft-footer-link">Terms of Service</a>
+        | <a href="/privacy" class="ft-footer-link">Privacy Policy</a>
+      </span>
+    </div>
+  </div>
+</div>
 
-          <!-- Copyright -->
-          <div class="ft-copyright">
-            © 2025 <a href="#" class="ft-brand-link">Admin</a>. All rights reserved
-          </div>
-        </div>
-      </div>
     </div>
   </footer>
 </template>
@@ -731,5 +739,19 @@ onUnmounted(() => {
   .ft-social-media {
     justify-content: center;
   }
+}
+.ft-brand-column[data-v-cbd5276e] {
+    max-width: 25rem;
+}
+.ft-brand-description[data-v-cbd5276e] {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    max-width: 22rem;
+}
+.ft-usa-content{
+  margin-top: 12px;
 }
 </style>
