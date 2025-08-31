@@ -1,16 +1,16 @@
 <template>
   <div class="fixed inset-0 pointer-events-none overflow-hidden z-50">
-    <!-- Donut -->
-    <div 
-      ref="donut"
-      class="absolute animate-float-slow"
-      style="left: 15%; top: 20%; animation-delay: 0s; animation-duration: 18s;"
-    >
-      <div 
-        class="rounded-full border-2 border-blue-400 opacity-40"
-        style="width: 35px; height: 35px;"
-      ></div>
-    </div>
+   <!-- Donut -->
+<div 
+  ref="donut"
+  class="absolute animate-float-slow"
+  style="left: 15%; top: 20%; animation-delay: 0s; animation-duration: 18s;"
+>
+  <div 
+    class="rounded-full border-4 border-yellow-500 opacity-40"
+    style="width: 28px; height: 28px;"
+  ></div>
+</div>
 
 
 

@@ -117,9 +117,13 @@
         </a>
         
         <!-- Cloud button -->
-        <a href="#" class="ml-2 px-6 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base">
-          Cloud
-        </a>
+       <a href="#" class="ml-2 px-6 py-2 rounded-lg bg-accent hover:bg-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base flex items-center gap-2">
+  Get Started
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/>
+  </svg>
+</a>
+
       </div>
 
       <!-- Mobile hamburger menu -->
