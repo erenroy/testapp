@@ -49,7 +49,6 @@
     </div>
   </section>
 
-  <!-- Your existing footer template stays exactly the same -->
   <footer id="footer-section" class="ft-section">
     <div class="ft-container">
       <!-- Main Footer Content with 4 Columns -->
@@ -59,22 +58,14 @@
          <div class="ft-logo">
   <div class="ft-logo-icon">
     <!-- Siand logo placeholder -->
-    <img src="/images/logo.jpg" alt="Logo" style="height: 3.6rem; width: auto;">
+    <img src="/images/logo.jpg" alt="Logo" style="height: 4.5rem; width: auto;">
   </div>
 </div>
-
           
           <p class="ft-brand-description">
             Sed perspiciatis unde omnis istee sit voluptatem accusante doloreue 
             <span class="ft-highlight">laudantium</span> aperiam eaque abillo inventore
           </p>
-          
-          <button class="ft-read-more">
-            Read More
-            <svg class="ft-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
 
           <!-- Social Media Icons - Smaller Size (4 icons only) -->
           <div class="ft-social-media">
@@ -100,7 +91,7 @@
             </a>
           </div>
          <div class="ft-usa-content">
-    <!-- American Flag SVG -->
+    <!-- American Flag SVG - Larger Size -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="ft-flag-icon">
       <rect width="640" height="480" fill="#fff"/>
       <g fill="#bf0a30">
@@ -114,9 +105,10 @@
       </g>
       <rect width="246.154" height="295.385" fill="#002868"/>
     </svg>
-    <span class="ft-usa-text" style="font-size:0.9rem; margin-top:5px; display:inline-block;">
-        Proudly Designed and Assembled in the USA
-    </span>
+    <div class="ft-usa-text-container">
+        <span class="ft-usa-text-line">Proudly Designed and</span>
+        <span class="ft-usa-text-line">Assembled in the USA</span>
+    </div>
 </div>
 
         </div>
@@ -158,15 +150,8 @@
         </div>
       </div>
 
-     <!-- Bottom Section with USA Flag and Copyright -->
+     <!-- Bottom Section - REMOVED the square button -->
 <div class="ft-bottom-section">
-  <!-- Back to Top Arrow -->
-  <button class="ft-back-to-top" @click="scrollToTop">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-    </svg>
-  </button>
-
   <!-- USA Flag and Copyright - CENTERED -->
   <div class="ft-bottom-content">
     <!-- Copyright -->
@@ -182,6 +167,20 @@
 
     </div>
   </footer>
+
+  <!-- Fixed Scroll to Top Button -->
+  <Transition name="scroll-button">
+    <button 
+      v-if="showScrollButton"
+      @click="scrollToTop"
+      class="fixed-scroll-to-top"
+      aria-label="Scroll to top"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+  </Transition>
 </template>
 
 <script setup>
@@ -192,6 +191,9 @@ const ctaRef = ref(null)
 const isCtaVisible = ref(false)
 const isTextVisible = ref(false)
 const isButtonsVisible = ref(false)
+
+// Scroll to top button visibility
+const showScrollButton = ref(false)
 
 let observer = null
 
@@ -214,7 +216,7 @@ const buttonsAnimationClasses = computed(() => ({
   'transition-all duration-800 ease-out delay-500': true
 }))
 
-// Footer scroll function
+// Scroll functions
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -222,7 +224,12 @@ const scrollToTop = () => {
   })
 }
 
+const handleScroll = () => {
+  showScrollButton.value = window.pageYOffset > 300
+}
+
 onMounted(() => {
+  // Intersection Observer for CTA animations
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -251,17 +258,21 @@ onMounted(() => {
   if (ctaRef.value) {
     observer.observe(ctaRef.value)
   }
+
+  // Add scroll event listener for scroll-to-top button
+  window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
   if (observer) {
     observer.disconnect()
   }
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <style scoped>
-/* CTA Section Styles */
+/* CTA Section Styles remain the same */
 .cta-section {
   background: linear-gradient(135deg, #5138ee 0%, #7c3aed 100%);
   position: relative;
@@ -279,7 +290,6 @@ onUnmounted(() => {
   z-index: 10;
 }
 
-/* Background Decorations */
 .cta-decorations {
   position: absolute;
   top: 0;
@@ -317,7 +327,6 @@ onUnmounted(() => {
   border-radius: 8px;
 }
 
-/* Main Content */
 .cta-content {
   display: flex;
   align-items: center;
@@ -325,7 +334,6 @@ onUnmounted(() => {
   gap: 3rem;
 }
 
-/* Left Text Content */
 .cta-text {
   display: flex;
   align-items: center;
@@ -360,7 +368,6 @@ onUnmounted(() => {
   margin: 0;
 }
 
-/* Right Buttons */
 .cta-buttons {
   display: flex;
   gap: 1rem;
@@ -416,7 +423,68 @@ onUnmounted(() => {
   transform: translateX(0.25rem);
 }
 
-/* Responsive Design for CTA */
+/* Fixed Scroll to Top Button */
+.fixed-scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #5138ee 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(81, 56, 238, 0.3);
+  z-index: 1000;
+}
+
+.fixed-scroll-to-top:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(81, 56, 238, 0.4);
+}
+
+.fixed-scroll-to-top:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.fixed-scroll-to-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.fixed-scroll-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Transition animations for scroll button */
+.scroll-button-enter-active,
+.scroll-button-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-button-enter-from {
+  opacity: 0;
+  transform: translateY(100px) scale(0.8);
+}
+
+.scroll-button-leave-to {
+  opacity: 0;
+  transform: translateY(100px) scale(0.8);
+}
+
+.scroll-button-enter-to,
+.scroll-button-leave-from {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 @media (max-width: 1200px) {
   .cta-container {
     padding: 2.5rem 3rem;
@@ -459,9 +527,21 @@ onUnmounted(() => {
   .cta-btn {
     justify-content: center;
   }
+
+  .fixed-scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .fixed-scroll-to-top svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
-/* All your existing footer styles remain exactly the same */
+/* Footer Styles */
 .ft-section {
   background: #f8fafc;
   padding: 4rem 0 2rem;
@@ -482,7 +562,7 @@ onUnmounted(() => {
 }
 
 .ft-brand-column {
-  max-width: 20rem;
+  max-width: 25rem;
 }
 
 .ft-logo {
@@ -495,39 +575,13 @@ onUnmounted(() => {
   gap: 0.75rem;
 }
 
-.ft-logo-dots {
-  width: 2rem;
-  height: 2rem;
-  background: linear-gradient(135deg, #5138ee, #7c3aed);
-  border-radius: 0.5rem;
-  position: relative;
-}
-
-.ft-logo-dots::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0.75rem;
-  height: 0.75rem;
-  background: white;
-  border-radius: 0.25rem;
-}
-
-.ft-logo-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #111827;
-  font-family: 'Poppins', sans-serif;
-}
-
 .ft-brand-description {
   font-size: 1rem;
   color: #6b7280;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-family: 'Poppins', sans-serif;
+  max-width: 22rem;
 }
 
 .ft-highlight {
@@ -535,37 +589,10 @@ onUnmounted(() => {
   font-weight: 600;
 }
 
-.ft-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #5138ee;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
-}
-
-.ft-read-more:hover {
-  color: #4338ca;
-}
-
-.ft-arrow {
-  width: 1rem;
-  height: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.ft-read-more:hover .ft-arrow {
-  transform: translateX(0.25rem);
-}
-
 .ft-social-media {
   display: flex;
   gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .ft-social-link {
@@ -595,6 +622,33 @@ onUnmounted(() => {
 .ft-social-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ft-usa-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 12px;
+}
+
+.ft-flag-icon {
+  width: 2.5rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.ft-usa-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.ft-usa-text-line {
+  color: #374151;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.1;
 }
 
 .ft-link-column {
@@ -632,61 +686,16 @@ onUnmounted(() => {
 
 .ft-bottom-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid #e5e7eb;
   padding-top: 2rem;
 }
 
-.ft-back-to-top {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: #5138ee;
-  color: white;
-  border: none;
-  border-radius: 0.375rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.ft-back-to-top:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-}
-
-.ft-back-to-top svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
 .ft-bottom-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.ft-usa-content {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.ft-flag-icon {
-  width: 1.5rem;
-  height: auto;
-}
-
-.ft-usa-text {
-  color: #374151;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
 }
 
 .ft-copyright {
@@ -729,9 +738,6 @@ onUnmounted(() => {
   }
   
   .ft-bottom-content {
-    position: relative;
-    left: auto;
-    transform: none;
     flex-direction: column;
     gap: 1rem;
   }
@@ -739,19 +745,9 @@ onUnmounted(() => {
   .ft-social-media {
     justify-content: center;
   }
-}
-.ft-brand-column[data-v-cbd5276e] {
-    max-width: 25rem;
-}
-.ft-brand-description[data-v-cbd5276e] {
-    font-size: 1rem;
-    color: #6b7280;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    max-width: 22rem;
-}
-.ft-usa-content{
-  margin-top: 12px;
+  
+  .ft-usa-content {
+    justify-content: center;
+  }
 }
 </style>

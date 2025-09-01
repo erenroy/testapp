@@ -8,24 +8,23 @@
 
   <!-- Navbar -->
   <header class="w-full border-b border-border sticky top-0 bg-white z-40">
-    <nav class="max-w-none mx-auto flex items-center justify-between px-16 py-4">
+    <nav class="max-w-none mx-auto flex items-center justify-between px-16 py-3">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="/images/logo.jpg" alt="Logo" class="h-10 w-auto">
+        <img src="/images/logo.jpg" alt="Logo" class="h-14 w-auto">
       </div>
 
       <!-- Desktop Navigation -->
       <ul class="hidden md:flex items-center gap-2 text-navlink font-semibold" @mouseleave="clearActiveMenu">
         <!-- Home -->
-       <li class="relative">
-  <a 
-    href="/" 
-    class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
-  >
-    Home
-  </a>
-</li>
-
+        <li class="relative">
+          <a 
+            href="/" 
+            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+          >
+            Home
+          </a>
+        </li>
 
         <!-- Platform -->
         <li class="relative">
@@ -55,20 +54,15 @@
           </a>
         </li>
 
-        <!-- Store -->
+        <!-- Store - Simple Link -->
         <li class="relative">
-        <a 
+          <a 
             href="/pricing" 
             class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
-            @mouseenter="setActiveMenu('store')"
-        >
+          >
             Store
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-        </a>
+          </a>
         </li>
-
 
         <!-- Resources -->
         <li class="relative">
@@ -101,13 +95,6 @@
 
       <!-- Desktop Right section -->
       <div class="hidden md:flex items-center gap-3">
-        <!-- Search button -->
-        <button class="p-2 text-navlink hover:text-accent transition-all duration-300 hover:bg-accentlight rounded-lg">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="16" y1="16" x2="21" y2="21"/>
-          </svg>
-        </button>
         
         <div class="border-r border-border h-6 mx-2"/>
         
@@ -117,13 +104,12 @@
         </a>
         
         <!-- Cloud button -->
-       <a href="#" class="ml-2 px-6 py-2 rounded-lg bg-accent hover:bg-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base flex items-center gap-2">
-  Get Started
-  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/>
-  </svg>
-</a>
-
+        <a href="https://cloud.stationpoint.io/" class="ml-2 px-6 py-2 rounded-lg bg-accent hover:bg-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base flex items-center gap-2">
+          Get Started
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
 
       <!-- Mobile hamburger menu -->
@@ -144,43 +130,9 @@
       @mouseleave="closeMenu"
     >
       <div class="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden backdrop-blur-sm">
-        <!-- Home Menu -->
-        <div v-if="activeMenu === 'home'" class="p-8">          
-          <div class="grid grid-cols-2 gap-8">
-            <!-- Left section - Utilities & Smart Grid -->
-            <div class="flex items-start group cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-all duration-200">
-              <div class="mr-4 pt-1">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-all duration-200">
-                  <svg class="w-6 h-6 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">Utilities & Smart Grid</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">Enhance field visibility for utility providers with advanced monitoring solutions</p>
-              </div>
-            </div>
-
-            <!-- Right section - Smart Infrastructure -->
-            <div class="flex items-start group cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-all duration-200">
-              <div class="mr-4 pt-1">
-                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-all duration-200">
-                  <svg class="w-6 h-6 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-2">Smart Infrastructure</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">Remote monitoring and lifecycle automation for intelligent infrastructure management</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        
         <!-- Platform Menu -->
-        <div v-if="activeMenu === 'platform'" class="p-8 ">
+        <div v-if="activeMenu === 'platform'" class="p-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Platform</h2>
             <p class="text-gray-600">Comprehensive IoT solutions for your business</p>
@@ -196,12 +148,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">IoT Platform</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Comprehensive platform for device management and data analytics</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-blue-600">Device Management</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-blue-600">Data Analytics</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-blue-600">API Gateway</a>
-                </div>
+                <p class="text-gray-600">Comprehensive platform for device management and data analytics</p>
               </div>
             </div>
             <div class="group cursor-pointer">
@@ -214,25 +161,20 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Cloud Services</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Scalable cloud infrastructure for your IoT applications</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-green-600">Cloud Hosting</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-green-600">Data Storage</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-green-600">Backup Solutions</a>
-                </div>
+                <p class="text-gray-600">Scalable cloud infrastructure for your IoT applications</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Devices Menu -->
+        <!-- Devices Menu - Single box taking full width -->
         <div v-if="activeMenu === 'devices'" class="p-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Devices</h2>
             <p class="text-gray-600">Advanced IoT hardware for every application</p>
           </div>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="group cursor-pointer">
+          <div class="grid grid-cols-1 gap-8">
+            <a href="/platform" class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-purple-300 transition-all duration-300">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-500 transition-all duration-200">
@@ -240,80 +182,11 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-gray-900">Smart Sensors</h3>
+                  <h3 class="text-xl font-bold text-gray-900">Station Point Pro</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Advanced sensing technology for comprehensive monitoring</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-purple-600">Temperature Sensors</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-purple-600">Motion Detectors</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-purple-600 hover:bg-purple-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-purple-600">Environmental Monitors</a>
-                </div>
+                <p class="text-gray-600">Advanced sensing technology for comprehensive monitoring available on Amazon</p>
               </div>
-            </div>
-            <div class="group cursor-pointer">
-              <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-indigo-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-indigo-500 transition-all duration-200">
-                    <svg class="w-6 h-6 text-indigo-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-bold text-gray-900">Controllers</h3>
-                </div>
-                <p class="text-gray-600 mb-4">Intelligent control systems for seamless automation</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-indigo-600">Smart Controllers</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-indigo-600">Gateway Devices</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-indigo-600">Edge Computing</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Store Menu -->
-        <div v-if="activeMenu === 'store'" class="p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Store</h2>
-            <p class="text-gray-600">Everything you need to build your IoT solution</p>
-          </div>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="group cursor-pointer">
-              <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-orange-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-orange-500 transition-all duration-200">
-                    <svg class="w-6 h-6 text-orange-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-bold text-gray-900">Hardware</h3>
-                </div>
-                <p class="text-gray-600 mb-4">Professional IoT hardware solutions for every need</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-orange-600">Sensor Kits</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-orange-600">Development Boards</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-orange-600">Connectivity Modules</a>
-                </div>
-              </div>
-            </div>
-            <div class="group cursor-pointer">
-              <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-red-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-red-500 transition-all duration-200">
-                    <svg class="w-6 h-6 text-red-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-bold text-gray-900">Software</h3>
-                </div>
-                <p class="text-gray-600 mb-4">Powerful software solutions and development tools</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-red-600">Platform Licenses</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-red-600">Mobile Apps</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-red-600 hover:bg-red-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-red-600">Analytics Tools</a>
-                </div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -334,12 +207,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Documentation</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Comprehensive guides and technical documentation</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-teal-600 hover:bg-teal-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-teal-600">API Documentation</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-teal-600 hover:bg-teal-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-teal-600">User Guides</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-teal-600 hover:bg-teal-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-teal-600">Best Practices</a>
-                </div>
+                <p class="text-gray-600">Comprehensive guides and technical documentation</p>
               </div>
             </div>
             <div class="group cursor-pointer">
@@ -352,12 +220,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Learning Center</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Interactive tutorials and educational content</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-cyan-600">Video Tutorials</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-cyan-600">Webinars</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-cyan-600">Community Forum</a>
-                </div>
+                <p class="text-gray-600">Interactive tutorials and educational content</p>
               </div>
             </div>
           </div>
@@ -380,12 +243,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Help Center</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Find answers and get personalized assistance</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-rose-600 hover:bg-rose-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-rose-600">Contact Support</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-rose-600 hover:bg-rose-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-rose-600">Live Chat</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-rose-600 hover:bg-rose-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-rose-600">Submit Ticket</a>
-                </div>
+                <p class="text-gray-600">Find answers and get personalized assistance</p>
               </div>
             </div>
             <div class="group cursor-pointer">
@@ -398,12 +256,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">24/7 Support</h3>
                 </div>
-                <p class="text-gray-600 mb-4">Round-the-clock assistance for critical issues</p>
-                <div class="space-y-2">
-                  <a href="#" class="block text-sm text-gray-700 hover:text-violet-600 hover:bg-violet-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-violet-600">Emergency Support</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-violet-600 hover:bg-violet-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-violet-600">System Status</a>
-                  <a href="#" class="block text-sm text-gray-700 hover:text-violet-600 hover:bg-violet-50 px-3 py-2 rounded-lg transition-all duration-200 group-hover:text-violet-600">FAQ</a>
-                </div>
+                <p class="text-gray-600">Round-the-clock assistance for critical issues</p>
               </div>
             </div>
           </div>
@@ -421,7 +274,7 @@
             <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Home</a></li>
             <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Platform</a></li>
             <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Devices</a></li>
-            <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Store</a></li>
+            <li><a href="/pricing" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Store</a></li>
             <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Resources</a></li>
             <li><a href="#" @click="closeMobileMenu" class="block py-3 hover:text-accent transition-all duration-300">Support</a></li>
           </ul>

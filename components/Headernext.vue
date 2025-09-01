@@ -29,9 +29,7 @@
           </div>
           <h3 class="text-2xl font-brand-bold">Software Model</h3>
           <p class="text-base leading-relaxed max-w-xs opacity-90">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
-          <a href="#" class="inline-flex items-center font-semibold underline hover:text-gray-200 transition-colors">
-            Learn More <span class="ml-2">&rarr;</span>
-          </a>
+         
         </div>
 
         <!-- Network Wired -->
@@ -44,9 +42,7 @@
           </div>
           <h3 class="text-2xl font-brand-bold">Network Wired</h3>
           <p class="text-base leading-relaxed max-w-xs opacity-90">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
-          <a href="#" class="inline-flex items-center font-semibold underline hover:text-gray-200 transition-colors">
-            Learn More <span class="ml-2">&rarr;</span>
-          </a>
+        
         </div>
 
         <!-- Final Testylization -->
@@ -59,9 +55,7 @@
           </div>
           <h3 class="text-2xl font-brand-bold">Final Testylization</h3>
           <p class="text-base leading-relaxed max-w-xs opacity-90">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
-          <a href="#" class="inline-flex items-center font-semibold underline hover:text-gray-200 transition-colors">
-            Learn More <span class="ml-2">&rarr;</span>
-          </a>
+         
         </div>
       </div>
     </div>

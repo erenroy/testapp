@@ -70,7 +70,9 @@
     <Services />
     <Updates />
     <Feedback />
+
   </div>
+  
 </template>
 
 <script setup>
