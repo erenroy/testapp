@@ -231,12 +231,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Advanced machine learning algorithms analyze patterns, predict issues, and optimize operations automatically.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
 
@@ -257,12 +252,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Monitor all station activities with live dashboards, instant alerts, and comprehensive status tracking.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
 
@@ -283,12 +273,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Intelligent workflows that automate routine tasks, reduce errors, and increase operational efficiency.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
 
@@ -308,12 +293,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Enterprise-grade security with advanced encryption, access controls, and compliance frameworks.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
 
@@ -333,12 +313,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Seamless cloud connectivity with scalable infrastructure and multi-platform synchronization.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
 
@@ -358,12 +333,7 @@
               <p class="text-slate-600 leading-relaxed mb-6">
                 Native mobile apps with offline capabilities for managing operations anywhere, anytime.
               </p>
-              <div class="flex items-center text-accent font-brand-medium text-sm group-hover:text-slate-800 transition-colors">
-                <span>Learn more</span>
-                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -435,6 +405,7 @@
         </div>
       </div>
     </section>
+    <Services />
 
     <!-- Professional CTA -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white" ref="ctaRef">
@@ -468,6 +439,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, reactive } from 'vue'
+import Services from '../../components/Services.vue'
 
 // Animation states
 const heroVisible = ref(false)

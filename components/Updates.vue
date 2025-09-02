@@ -3,7 +3,7 @@
     <div class="nl-container">
       <div class="nl-content-wrapper">
         
-        <!-- Left Content with More Margin -->
+        <!-- Left Content - Centered Text Only -->
         <div class="nl-left-content" :class="sectionVisible ? 'nl-fade-in' : ''">
           <div class="nl-badge">Our Newsletter</div>
           <h2 class="nl-title">
@@ -11,62 +11,19 @@
             <br>
             to Get More Updates
           </h2>
-          
-          <!-- Email Form -->
-          <form @submit.prevent="handleSubmit" class="nl-form">
-            <div class="nl-input-wrapper">
-              <input
-                v-model="email"
-                type="email"
-                placeholder="Enter Email Address"
-                class="nl-email-input"
-                required
-              />
-              <button type="submit" class="nl-submit-btn">
-                <span>Sign up</span>
-                <svg class="nl-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
-          </form>
-          
-          <!-- Frequency Options -->
-          <div class="nl-options">
-            <label class="nl-option">
-              <input 
-                v-model="frequency" 
-                type="radio" 
-                value="weekly" 
-                class="nl-radio"
-              />
-              <span class="nl-checkmark"></span>
-              <span class="nl-option-text">Weekly Updates</span>
-            </label>
-            
-            <label class="nl-option">
-              <input 
-                v-model="frequency" 
-                type="radio" 
-                value="monthly" 
-                class="nl-radio"
-              />
-              <span class="nl-checkmark"></span>
-              <span class="nl-option-text">Monthly Updates</span>
-            </label>
-          </div>
         </div>
 
         <!-- Right Content - Image Taking Full Height -->
         <div class="nl-right-content" :class="sectionVisible ? 'nl-fade-in-delay' : ''">
           <div class="nl-illustration-wrapper">
             <!-- Image taking full height of section -->
-            <img 
-              src="https://img.freepik.com/premium-vector/woman-sitting-with-laptop-computer-vector-illustration-flat-design_598821-116.jpg"
-              alt="Woman working on laptop"
-              class="nl-main-illustration nl-floating"
-              @error="handleImageError"
-            />
+          <img 
+  src="https://purepng.com/public/uploads/large/purepng.com-business-womanbusiness-womanbusinesswomanoffice-woman-1421526977603wvxvr.png"
+  alt="Woman working on laptop"
+  class="nl-main-illustration nl-floating"
+  @error="handleImageError"
+/>
+
             
             <!-- Decorative Elements -->
             <div class="nl-decoration-stripes"></div>
@@ -81,21 +38,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const email = ref('')
-const frequency = ref('weekly')
 const sectionVisible = ref(false)
 const sectionRef = ref(null)
-
-const handleSubmit = () => {
-  if (email.value) {
-    console.log('Newsletter subscription:', {
-      email: email.value,
-      frequency: frequency.value
-    })
-    alert(`Thanks for subscribing with ${email.value}!`)
-    email.value = ''
-  }
-}
 
 const handleImageError = (event) => {
   event.target.src = 'https://cdni.iconscout.com/illustration/premium/thumb/girl-working-on-laptop-2537387-2146478.png'
@@ -128,15 +72,15 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Section - SAME HEIGHT as before */
+/* Section */
 .nl-section {
   background: linear-gradient(135deg, #5138ee 0%, #7c3aed 100%);
   overflow: hidden;
   position: relative;
-  padding: 3rem 0; /* Same padding */
+  padding: 3rem 0;
   margin: 2rem 5% 0 5%;
   border-radius: 1.5rem;
-  min-height: 320px; /* Same height */
+  min-height: 320px;
 }
 
 .nl-container {
@@ -153,10 +97,15 @@ onUnmounted(() => {
   height: 100%;
 }
 
-/* Left content - UNCHANGED */
+/* Left content - Centered Text */
 .nl-left-content {
   max-width: 28rem;
-  margin-left: 3rem;
+  margin: 0 auto; /* Center the content */
+  text-align: center; /* Center align text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   transform: translateX(-2rem);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -185,123 +134,7 @@ onUnmounted(() => {
   font-weight: 700;
   color: white;
   line-height: 1.2;
-  margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Form styles - UNCHANGED */
-.nl-form {
-  margin-bottom: 1.5rem;
-}
-
-.nl-input-wrapper {
-  display: flex;
-  background: white;
-  border-radius: 0.75rem;
-  padding: 0.25rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  max-width: 420px;
-}
-
-.nl-email-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 0.875rem 1rem;
-  font-size: 0.9rem;
-  color: #111927;
-  background: transparent;
-  border-radius: 0.5rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.nl-email-input::placeholder {
-  color: #6b7280;
-}
-
-.nl-submit-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #1f2937;
-  color: white;
-  border: none;
-  padding: 0.875rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  font-family: 'Poppins', sans-serif;
-}
-
-.nl-submit-btn:hover {
-  background: #111827;
-  transform: translateY(-1px);
-}
-
-.nl-arrow {
-  width: 1rem;
-  height: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.nl-submit-btn:hover .nl-arrow {
-  transform: translateX(0.25rem);
-}
-
-/* Radio options - UNCHANGED */
-.nl-options {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nl-option {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-}
-
-.nl-radio {
-  display: none;
-}
-
-.nl-checkmark {
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nl-checkmark::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.375rem;
-  height: 0.375rem;
-  background: white;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.3s ease;
-}
-
-.nl-radio:checked + .nl-checkmark {
-  border-color: white;
-}
-
-.nl-radio:checked + .nl-checkmark::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.nl-option-text {
-  color: white;
-  font-weight: 500;
-  font-size: 0.875rem;
+  margin-bottom: 0; /* Remove bottom margin since no form below */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -324,7 +157,7 @@ onUnmounted(() => {
 .nl-illustration-wrapper {
   position: relative;
   width: 100%;
-  height: 320px; /* Full height of the section */
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,14 +165,14 @@ onUnmounted(() => {
 
 .nl-main-illustration {
   width: auto;
-  height: 100%; /* Takes full height of wrapper (320px) */
-  max-width: 400px; /* Maximum width constraint */
+  height: 100%;
+  max-width: 400px;
   object-fit: contain;
   z-index: 10;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
 }
 
-/* Decorative Elements positioned relative to full height */
+/* Decorative Elements */
 .nl-decoration-stripes {
   position: absolute;
   width: 100px;
@@ -368,7 +201,7 @@ onUnmounted(() => {
   z-index: 3;
 }
 
-/* Floating animation - UNCHANGED */
+/* Floating animation */
 .nl-floating {
   animation: nl-float 6s ease-in-out infinite;
 }
@@ -388,10 +221,6 @@ onUnmounted(() => {
     margin-left: 3%;
     margin-right: 3%;
   }
-  
-  .nl-left-content {
-    margin-left: 2rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -409,26 +238,11 @@ onUnmounted(() => {
   }
   
   .nl-left-content {
-    margin-left: 0;
     max-width: 100%;
   }
   
   .nl-title {
     font-size: 2rem;
-  }
-  
-  .nl-input-wrapper {
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 100%;
-  }
-  
-  .nl-submit-btn {
-    justify-content: center;
-  }
-  
-  .nl-options {
-    justify-content: center;
   }
   
   .nl-illustration-wrapper {
