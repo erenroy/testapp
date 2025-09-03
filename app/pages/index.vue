@@ -1,7 +1,8 @@
 <template>
   <div class="page-container">
     <!-- Hero Section -->
-    <main class="max-w-none mx-auto px-16 xl:px-24 2xl:px-32 flex flex-col md:flex-row items-center gap-12 md:gap-16 xl:gap-12 2xl:gap-10 py-24">
+    <main class="max-w-7xl mx-auto px-8 xl:px-16 2xl:px-24 flex flex-col md:flex-row items-center gap-12 md:gap-16 xl:gap-12 2xl:gap-10 py-24">
+
       <!-- Left content -->
       <div class="flex-1 w-full max-w-2xl">
         <!-- Decorative dots -->

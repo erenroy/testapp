@@ -135,6 +135,7 @@
               </p>
             </div>
           </div>
+    <Solutions />
 
           <!-- Three BIGGER Uniform Images -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 scroll-fade-in" ref="imagesSection">
@@ -160,7 +161,14 @@
               />
             </div>
           </div>
+           </div>
+      </div>
+    </section>
+    <Headernext />
 
+      <section class="py-12 mx-[5%] animated-section" ref="mainSection">
+      <div class="w-full">
+        <div class="relative">
           <!-- ENHANCED PROFESSIONAL TECHNOLOGY SECTION -->
           <div class="mb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 rounded-2xl py-20 px-8 border border-gray-100 scroll-fade-in" ref="technologySection">
             <h2 class="text-3xl font-brand-bold text-slate-800 mb-16 text-center slide-in-up">Built Using Trusted Technology From</h2>
@@ -222,6 +230,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import Headernext from '../../components/Headernext.vue'
+import Solutions from '../../components/Solutions.vue'
 
 const pageLoaded = ref(false)
 const visibleSections = ref(new Set())

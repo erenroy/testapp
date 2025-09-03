@@ -20,7 +20,7 @@
         <li class="relative">
           <a 
             href="/" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
           >
             Home
           </a>
@@ -30,7 +30,7 @@
         <li class="relative">
           <a 
             href="#" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
             @mouseenter="setActiveMenu('platform')"
           >
             Platform
@@ -44,7 +44,7 @@
         <li class="relative">
           <a 
             href="#" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
             @mouseenter="setActiveMenu('devices')"
           >
             Devices
@@ -58,7 +58,7 @@
         <li class="relative">
           <a 
             href="/pricing" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
           >
             Store
           </a>
@@ -68,7 +68,7 @@
         <li class="relative">
           <a 
             href="#" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
             @mouseenter="setActiveMenu('resources')"
           >
             Resources
@@ -82,7 +82,7 @@
         <li class="relative">
           <a 
             href="#" 
-            class="flex items-center gap-1 py-2 px-4 rounded text-base hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
+            class="flex items-center gap-1 py-2 px-4 rounded text-lg hover:text-accent transition-all duration-300 border-b-2 border-transparent hover:border-accent cursor-pointer"
             @mouseenter="setActiveMenu('support')"
           >
             Support
@@ -105,7 +105,7 @@
         
         <!-- Cloud button -->
         <a href="https://cloud.stationpoint.io/" class="ml-2 px-6 py-2 rounded-lg bg-accent hover:bg-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-base flex items-center gap-2">
-          Get Started
+          Cloud Login 
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/>
           </svg>
@@ -135,36 +135,32 @@
         <div v-if="activeMenu === 'platform'" class="p-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Platform</h2>
-            <p class="text-gray-600">Comprehensive IoT solutions for your business</p>
+            <p class="text-gray-600">Get a clear view of our platform’s features and how it works for you.</p>
           </div>
-          <div class="grid grid-cols-2 gap-8">
-            <div class="group cursor-pointer">
-              <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-500 transition-all duration-200">
-                    <svg class="w-6 h-6 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-bold text-gray-900">IoT Platform</h3>
-                </div>
-                <p class="text-gray-600">Comprehensive platform for device management and data analytics</p>
-              </div>
-            </div>
-            <div class="group cursor-pointer">
-              <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-green-500 transition-all duration-200">
-                    <svg class="w-6 h-6 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-bold text-gray-900">Cloud Services</h3>
-                </div>
-                <p class="text-gray-600">Scalable cloud infrastructure for your IoT applications</p>
-              </div>
-            </div>
-          </div>
+      <div class="grid grid-cols-2 gap-8">
+  <a href="/platform" class="group cursor-pointer bg-blue-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-blue-100 transition-all duration-200">
+    <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 mb-2">
+      <!-- Platform Overview icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M6 16L14 8M9 9H15V15" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="text-xl font-bold text-gray-900">Platform Overview</span>
+    <span class="text-gray-600 text-sm">Comprehensive platform for device management and data analytics</span>
+  </a>
+  <a href="/pricing" class="group cursor-pointer bg-green-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-green-100 transition-all duration-200">
+    <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 mb-2">
+      <!-- Plan Pricing icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 12L9 18M14 18V12H8" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="text-xl font-bold text-gray-900">Plan Pricing</span>
+    <span class="text-gray-600 text-sm">Find the perfect plan with transparent pricing tailored to your needs.</span>
+  </a>
+</div>
+
+
         </div>
 
         <!-- Devices Menu - Single box taking full width -->
