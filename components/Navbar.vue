@@ -170,7 +170,7 @@
             <p class="text-gray-600">Advanced IoT hardware for every application</p>
           </div>
           <div class="grid grid-cols-1 gap-8">
-            <a href="/platform" class="group cursor-pointer">
+            <a href="/station" class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-purple-300 transition-all duration-300">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-500 transition-all duration-200">
