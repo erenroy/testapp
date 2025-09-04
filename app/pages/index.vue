@@ -1,8 +1,7 @@
 <template>
   <div class="page-container">
     <!-- Hero Section -->
-    <main class="max-w-7xl mx-auto px-8 xl:px-16 2xl:px-24 flex flex-col md:flex-row items-center gap-12 md:gap-16 xl:gap-12 2xl:gap-10 py-24">
-
+    <main class="hero-responsive">
       <!-- Left content -->
       <div class="flex-1 w-full max-w-2xl">
         <!-- Decorative dots -->
@@ -69,7 +68,6 @@
     <UserExperienceSection />
     <Corefeatures />
     <Updates />
-
     <Services />
     <Feedback />
   </div>
@@ -86,11 +84,63 @@ import Headernext from '../../components/Headernext.vue'
 </script>
 
 <style scoped>
-/* Single smooth page animation */
+/* Your original animation */
 .page-container {
   opacity: 0;
   transform: translateY(30px);
   animation: smoothPageLoad 1.2s ease-out 0.3s forwards;
+}
+
+/* Responsive container that prevents huge gaps on large screens */
+.hero-responsive {
+  max-width: 80rem; /* Same as max-w-7xl (1280px) for normal screens */
+  margin: 0 auto;
+  padding: 6rem 2rem; /* py-24, px-8 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* gap-12 */
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  .hero-responsive {
+    flex-direction: row;
+    gap: 4rem; /* md:gap-16 */
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-responsive {
+    gap: 3rem; /* xl:gap-12 */
+    padding-left: 4rem; /* xl:px-16 */
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-responsive {
+    gap: 2.5rem; /* 2xl:gap-10 */
+    padding-left: 6rem; /* 2xl:px-24 */
+    padding-right: 6rem;
+  }
+}
+
+/* Fix for very large screens - uses more width to reduce gaps */
+@media (min-width: 1920px) {
+  .hero-responsive {
+    max-width: 90rem; /* Increases from 1280px to 1440px */
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  .hero-responsive {
+    max-width: 120rem; /* Increases to 1920px for ultra-wide screens */
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
 }
 
 @keyframes smoothPageLoad {

@@ -135,32 +135,34 @@
         <div v-if="activeMenu === 'platform'" class="p-8">
           <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Platform</h2>
-            <p class="text-gray-600">Get a clear view of our platform’s features and how it works for you.</p>
+            <p class="text-gray-600">Get a clear view of our platform's features and how it works for you.</p>
           </div>
-      <div class="grid grid-cols-2 gap-8">
-  <a href="/platform" class="group cursor-pointer bg-blue-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-blue-100 transition-all duration-200">
-    <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 mb-2">
-      <!-- Platform Overview icon -->
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M6 16L14 8M9 9H15V15" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-    <span class="text-xl font-bold text-gray-900">Platform Overview</span>
-    <span class="text-gray-600 text-sm">Comprehensive platform for device management and data analytics</span>
-  </a>
-  <a href="/pricing" class="group cursor-pointer bg-green-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-green-100 transition-all duration-200">
-    <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 mb-2">
-      <!-- Plan Pricing icon -->
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M15 12L9 18M14 18V12H8" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-    <span class="text-xl font-bold text-gray-900">Plan Pricing</span>
-    <span class="text-gray-600 text-sm">Find the perfect plan with transparent pricing tailored to your needs.</span>
-  </a>
-</div>
-
-
+          <div class="grid grid-cols-2 gap-8">
+            <a href="/platform" class="group cursor-pointer bg-blue-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-blue-100 transition-all duration-200">
+              <div class="flex items-center gap-3">
+                <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100">
+                  <!-- Platform Overview icon -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 16L14 8M9 9H15V15" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-xl font-bold text-gray-900">Platform Overview</span>
+              </div>
+              <span class="text-gray-600 text-sm">Comprehensive platform for device management and data analytics</span>
+            </a>
+            <a href="/pricing" class="group cursor-pointer bg-green-50 rounded-lg flex flex-col items-start gap-2 p-4 hover:bg-green-100 transition-all duration-200">
+              <div class="flex items-center gap-3">
+                <span class="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100">
+                  <!-- Plan Pricing icon -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 12L9 18M14 18V12H8" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="text-xl font-bold text-gray-900">Plan Pricing</span>
+              </div>
+              <span class="text-gray-600 text-sm">Find the perfect plan with transparent pricing tailored to your needs.</span>
+            </a>
+          </div>
         </div>
 
         <!-- Devices Menu - Single box taking full width -->
@@ -172,8 +174,8 @@
           <div class="grid grid-cols-1 gap-8">
             <a href="/station" class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-purple-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-purple-500 transition-all duration-200">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-500 transition-all duration-200">
                     <svg class="w-6 h-6 text-purple-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                     </svg>
@@ -195,21 +197,21 @@
           <div class="grid grid-cols-2 gap-8">
             <div class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-teal-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-teal-500 transition-all duration-200">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center group-hover:bg-teal-500 transition-all duration-200">
                     <svg class="w-6 h-6 text-teal-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-gray-900">Documentation</h3>
+                  <h3 class="text-xl font-bold text-gray-900">Custom Solutions</h3>
                 </div>
                 <p class="text-gray-600">Comprehensive guides and technical documentation</p>
               </div>
             </div>
             <div class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-cyan-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-cyan-500 transition-all duration-200">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center group-hover:bg-cyan-500 transition-all duration-200">
                     <svg class="w-6 h-6 text-cyan-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                     </svg>
@@ -231,8 +233,8 @@
           <div class="grid grid-cols-2 gap-8">
             <div class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-rose-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-rose-500 transition-all duration-200">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center group-hover:bg-rose-500 transition-all duration-200">
                     <svg class="w-6 h-6 text-rose-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
                     </svg>
@@ -244,8 +246,8 @@
             </div>
             <div class="group cursor-pointer">
               <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-violet-300 transition-all duration-300">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-violet-500 transition-all duration-200">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center group-hover:bg-violet-500 transition-all duration-200">
                     <svg class="w-6 h-6 text-violet-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>

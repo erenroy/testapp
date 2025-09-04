@@ -85,7 +85,7 @@
             </div>
             
             <!-- Project Info Sidebar -->
-            <div class="absolute top-[70%] right-8 bg-accent rounded-lg p-8 text-white shadow-xl w-96 h-[540px] z-10 slide-in-right">
+            <div class="absolute top-[70%] right-8 bg-accent rounded-lg p-8 text-white shadow-xl w-96 h-[640px] z-10 slide-in-right">
               <h3 class="text-2xl font-brand-bold mb-6 text-left">Project Info</h3>
               <div class="w-full border-t-4 border-white opacity-80 mb-8"></div>
               
@@ -111,7 +111,20 @@
                 <div class="fade-in-item" style="animation-delay: 0.8s">
                   <p class="text-purple-200 font-brand-medium mb-2 text-sm">Address</p>
                   <p class="font-brand-semibold text-xl">75 Main Street, USA</p>
+                  <div class="w-full border-t border-white opacity-40 mt-6"></div>
                 </div>
+
+                <!-- Price Box -->
+                <div class="fade-in-item bg-white border-2 border-gray-300 shadow-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3),0_10px_10px_-5px_rgba(0,0,0,0.22)] rounded-xl p-6 mt-8" style="animation-delay: 1s">
+                  <p class="text-gray-600 font-brand-medium mb-3 text-sm">Price</p>
+                  <p class="font-brand-bold text-3xl text-gray-900 mb-4">$1,499.99</p>
+                  
+                  <!-- Buy Now Button -->
+                  <button class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-brand-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50">
+                    Buy Now
+                  </button>
+                </div>
+
               </div>
             </div>
           </div>
@@ -130,6 +143,11 @@
               </p>
               
               <p class="fade-in-item" style="animation-delay: 0.6s">
+                Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+                Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+              </p>
+
+                <p class="fade-in-item" style="animation-delay: 0.6s">
                 Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
                 Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
               </p>
