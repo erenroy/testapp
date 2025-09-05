@@ -154,6 +154,7 @@
             </div>
           </div>
     <Solutions />
+    <Stationincludes />
 
           <!-- Three BIGGER Uniform Images -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 scroll-fade-in" ref="imagesSection">
@@ -183,7 +184,6 @@
       </div>
     </section>
     <Headernext />
-
       <section class="py-12 mx-[5%] animated-section" ref="mainSection">
       <div class="w-full">
         <div class="relative">
@@ -250,6 +250,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Headernext from '../../components/Headernext.vue'
 import Solutions from '../../components/Solutions.vue'
+import Stationincludes from '../../components/Stationincludes.vue'
+
 
 const pageLoaded = ref(false)
 const visibleSections = ref(new Set())

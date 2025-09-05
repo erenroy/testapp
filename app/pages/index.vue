@@ -91,15 +91,17 @@ import Headernext from '../../components/Headernext.vue'
   animation: smoothPageLoad 1.2s ease-out 0.3s forwards;
 }
 
-/* Responsive container that prevents huge gaps on large screens */
+/* Universal solution with 8% margins (2% decrease from 10%) */
 .hero-responsive {
-  max-width: 80rem; /* Same as max-w-7xl (1280px) for normal screens */
-  margin: 0 auto;
+  margin-left: 8%; /* Reduced from 10% to 8% */
+  margin-right: 8%; /* Reduced from 10% to 8% */
+  width: 84%; /* Content takes 84% of screen width (increased from 80%) */
   padding: 6rem 2rem; /* py-24, px-8 */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem; /* gap-12 */
+  justify-content: center;
 }
 
 /* Responsive breakpoints */
@@ -107,39 +109,58 @@ import Headernext from '../../components/Headernext.vue'
   .hero-responsive {
     flex-direction: row;
     gap: 4rem; /* md:gap-16 */
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-responsive {
+    gap: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media (min-width: 1280px) {
   .hero-responsive {
-    gap: 3rem; /* xl:gap-12 */
-    padding-left: 4rem; /* xl:px-16 */
+    gap: 5rem; /* xl:gap-20 */
+    padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 
 @media (min-width: 1536px) {
   .hero-responsive {
-    gap: 2.5rem; /* 2xl:gap-10 */
-    padding-left: 6rem; /* 2xl:px-24 */
+    gap: 6rem; /* 2xl:gap-24 */
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/* Ultra-wide screens (2000px+) - maintains perfect balance */
+@media (min-width: 2000px) {
+  .hero-responsive {
+    gap: 8rem; /* Larger gap for ultra-wide */
+    padding-left: 6rem;
     padding-right: 6rem;
   }
 }
 
-/* Fix for very large screens - uses more width to reduce gaps */
-@media (min-width: 1920px) {
+/* Extreme ultra-wide screens (2500px+) */
+@media (min-width: 2500px) {
   .hero-responsive {
-    max-width: 90rem; /* Increases from 1280px to 1440px */
+    gap: 10rem; /* Even larger gap */
     padding-left: 8rem;
     padding-right: 8rem;
   }
 }
 
-@media (min-width: 2400px) {
+/* 4K and beyond (3000px+) */
+@media (min-width: 3000px) {
   .hero-responsive {
-    max-width: 120rem; /* Increases to 1920px for ultra-wide screens */
-    padding-left: 12rem;
-    padding-right: 12rem;
+    gap: 12rem; /* Maximum gap for perfect balance */
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
