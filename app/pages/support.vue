@@ -4,9 +4,13 @@
     <div class="absolute inset-0 pointer-events-none">
       <svg class="absolute w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern id="squares" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
-            <rect x="40" y="40" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+          <pattern id="squares" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+            <rect x="30" y="0" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+            <rect x="0" y="30" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+            <rect x="30" y="30" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+            <rect x="60" y="0" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
+            <rect x="60" y="30" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1" class="text-text-secondary"/>
           </pattern>
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="url(#squares)"/>
@@ -37,37 +41,10 @@
             </p>
             
             <!-- Stats Bar -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div class="bg-primary border border-border rounded-2xl p-6">
-                <div class="text-3xl font-brand-bold text-accent mb-2">24/7</div>
-                <div class="text-text-secondary">Support Available</div>
-              </div>
-              <div class="bg-primary border border-border rounded-2xl p-6">
-                <div class="text-3xl font-brand-bold text-accent mb-2">&lt;30s</div>
-                <div class="text-text-secondary">Average Response</div>
-              </div>
-              <div class="bg-primary border border-border rounded-2xl p-6">
-                <div class="text-3xl font-brand-bold text-accent mb-2">99.8%</div>
-                <div class="text-text-secondary">Uptime Guarantee</div>
-              </div>
-            </div>
+           
             
             <!-- Contact Buttons -->
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
-              <button @click="handleEmailContact" class="group w-full md:w-auto bg-accent hover:bg-accent/90 text-primary px-10 py-4 rounded-xl font-brand-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105">
-                <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <span>Contact via Email</span>
-              </button>
-              
-              <button @click="handlePhoneContact" class="group w-full md:w-auto bg-transparent border-2 border-accent hover:border-accent hover:bg-accent/5 text-accent px-10 py-4 rounded-xl font-brand-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-3">
-                <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                </svg>
-                <span>Contact via Phone</span>
-              </button>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -79,8 +56,8 @@
           <p class="text-2xl text-text-secondary font-light max-w-4xl mx-auto">Choose the support option that fits your needs and timeline</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <!-- Live Chat - Featured -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          <!-- Live Chat Support -->
           <div class="group bg-accentlight border-2 border-accent/20 hover:border-accent rounded-3xl p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden">
             <div class="absolute top-8 right-8 bg-accent text-primary px-4 py-2 rounded-full text-sm font-brand-semibold">
               INSTANT
@@ -107,14 +84,35 @@
             </button>
           </div>
 
-          <!-- Knowledge Base - Featured -->
+          <!-- Open A Ticket -->
+          <div class="group bg-primary border-2 border-border hover:border-accent/30 rounded-3xl p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+            <div class="w-20 h-20 bg-navlink rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-brand-bold text-text-primary mb-6">Open A Ticket</h3>
+            <p class="text-lg text-text-secondary mb-8 leading-relaxed">Submit a detailed support ticket for complex issues that require thorough investigation and documentation from our technical team.</p>
+            
+            <div class="flex items-center space-x-6 mb-8">
+              <span class="font-brand-semibold text-text-primary">Priority tracking</span>
+              <div class="text-text-muted">•</div>
+              <span class="text-text-muted">Detailed responses</span>
+            </div>
+            
+            <button class="w-full bg-navlink text-primary py-5 rounded-2xl font-brand-bold text-lg hover:bg-navlink/90 transition-colors shadow-lg">
+              Create Ticket
+            </button>
+          </div>
+
+          <!-- Knowledge Base -->
           <div class="group bg-primary border-2 border-border hover:border-accent/30 rounded-3xl p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
             <div class="w-20 h-20 bg-navlink rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
               <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
               </svg>
             </div>
-            <h3 class="text-3xl font-brand-bold text-text-primary mb-6">Help Center</h3>
+            <h3 class="text-3xl font-brand-bold text-text-primary mb-6">Knowledge Base</h3>
             <p class="text-lg text-text-secondary mb-8 leading-relaxed">Browse our comprehensive documentation, step-by-step guides, and detailed tutorials. Find in-depth answers to complex questions.</p>
             
             <div class="flex items-center space-x-6 mb-8">
@@ -124,7 +122,7 @@
             </div>
             
             <button class="w-full bg-navlink text-primary py-5 rounded-2xl font-brand-bold text-lg hover:bg-navlink/90 transition-colors shadow-lg">
-              Browse Help Center
+              Browse Knowledge Base
             </button>
           </div>
         </div>
@@ -249,7 +247,7 @@
                 </svg>
               </button>
               <div v-show="openFaq === 6" class="px-8 pb-6">
-                <p class="text-text-secondary leading-relaxed">Our comprehensive help center contains over 500 articles, including detailed troubleshooting guides, step-by-step tutorials, and video walkthroughs. You can access it by clicking "Browse Help Center" above, or use the search function to find specific topics.</p>
+                <p class="text-text-secondary leading-relaxed">Our comprehensive help center contains over 500 articles, including detailed troubleshooting guides, step-by-step tutorials, and video walkthroughs. You can access it by clicking "Browse Knowledge Base" above, or use the search function to find specific topics.</p>
               </div>
             </div>
           </div>
